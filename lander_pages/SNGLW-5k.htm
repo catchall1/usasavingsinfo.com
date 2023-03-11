@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.turbo-progress-bar {
   position: fixed;
   display: block;
@@ -20,162 +19,7 @@
 <meta name="csrf-token" content="T4Lm7MXENrNoqpHeTHbFf8Uuc-kLjqXZn-gNPTdNNaMF-GdmA5Gk-lqwMFSaT_MPoISOLbUctGRpZmHZe2mwdg">
   <meta name="csp-nonce">
 
-    <!-- Snippets Start -->
-    <script async="" src="./SNGLW-5k_files/fbevents.js.download"></script><script type="text/javascript" id="ipl4t" data-controller="snippets--predefined-templates--fbq-uuid-to-sub-five-controller">
-    !function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-            n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-        ' https://connect.facebook.net/en_US/fbevents.js');
-
-    (function () {
-        try {
-            var rewriteDOM = function () {
-                Promise.resolve().then(function () {
-                    var uuidGen = function () {
-                        return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-                            (
-                                c ^
-                                (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-                            ).toString(16)
-                        );
-                    };
-                    var uuid = uuidGen();
-                    var options = {
-                        external_id: uuid
-                    }
-                    if (typeof fbq != 'undefined' && fbq) {
-                        fbq('init', '568453515189119', options);
-                        fbq('track', 'PageView', options);
-                    } else {
-                        console.log('[params rewriting] no fbq pixel source to init');
-                    }
-                    var addParamsToUrl = function (url) {
-                        return params =>
-                            url + (url.indexOf("?") !== -1 ? "&" : "?") + params.substr(1);
-                    };
-
-                    var leadFormComponents = document.querySelectorAll("[data-controller=lead-forms--component]");
-                    var pageLinks = document.querySelectorAll("a");
-                    var forms = document.querySelectorAll("form");
-                    var answers = document.querySelectorAll(".button.answer[onclick]")
-                    var redirectableEl = document.querySelectorAll("[data-redirect]");
-                    var newTabRedirectableEl = document.querySelectorAll("[data-new-tab-redirect]");
-                    var linkRedirectCurrentTabUrlValue = document.querySelectorAll("[data-link-redirect-current-tab-url-value]")
-                    var linkRedirectNewTabUrlValue = document.querySelectorAll("[data-link-redirect-new-tab-url-value]")
-
-
-                    console.log('leadFormComponents', leadFormComponents)
-                    console.log('forms', forms)
-                    window.addEventListener('DOMContentLoaded', (event) => {
-                        console.log('DOM fully loaded and parsed');
-                        console.log("dom ready leadform", document.querySelectorAll("[data-controller=lead-forms--component]"))
-                    });
-                    Array.from(leadFormComponents).forEach(leadFormComponent => {
-                        var submitRedirectAttr = 'data-lead-forms--component-submit-redirect-url-value'
-                        var popupRedirectAttr = 'data-lead-forms--component-submit-popup-url-value'
-                        var redirectLink = leadFormComponent.getAttribute(submitRedirectAttr)
-                        var popupRedirect = leadFormComponent.getAttribute(popupRedirectAttr)
-                        if (redirectLink) leadFormComponent.setAttribute(submitRedirectAttr, addParamsToUrl(redirectLink)("&sub5=" + uuid));
-                        if (popupRedirect) leadFormComponent.setAttribute(popupRedirectAttr, addParamsToUrl(popupRedirect)("&sub5=" + uuid));
-                    })
-                    Array.from(forms).forEach(form => {
-                        var redirect_link = form.getAttribute('redirect_link')
-                        var new_tab_redirect_link = form.getAttribute('new_tab_redirect_link')
-                        if (redirect_link) form.setAttribute('redirect_link', addParamsToUrl(redirect_link)("&sub5=" + uuid));
-                        if (new_tab_redirect_link) form.setAttribute('new_tab_redirect_link', addParamsToUrl(new_tab_redirect_link)("&sub5=" + uuid));
-                    })
-                    Array.from(redirectableEl).forEach(form => {
-                        var redirect_link = form.getAttribute('data-redirect')
-                        if (redirect_link) form.setAttribute('data-redirect', addParamsToUrl(redirect_link)("&sub5=" + uuid));
-                    })
-                    Array.from(newTabRedirectableEl).forEach(form => {
-                        var new_tab_redirect_link = form.getAttribute('data-new-tab-redirect')
-                        if (new_tab_redirect_link) form.setAttribute('data-new-tab-redirect', addParamsToUrl(new_tab_redirect_link)("&sub5=" + uuid));
-                    })
-                    Array.from(linkRedirectCurrentTabUrlValue).forEach(form => {
-                        var redirectLink = form.getAttribute('data-link-redirect-current-tab-url-value')
-                        if (redirectLink) form.setAttribute('data-link-redirect-current-tab-url-value', addParamsToUrl(redirectLink)("&sub5=" + uuid));
-                    })
-                    Array.from(linkRedirectNewTabUrlValue).forEach(form => {
-                        var redirectLink = form.getAttribute('data-link-redirect-new-tab-url-value')
-                        if (redirectLink) form.setAttribute('data-link-redirect-new-tab-url-value', addParamsToUrl(redirectLink)("&sub5=" + uuid));
-                    })
-                    var extractUrlFromHandler = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(clickHandlerStr.indexOf('https'), clickHandlerStr.lastIndexOf("'"));
-                    }
-                    var extractEverythingBeforeUrl = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(0, clickHandlerStr.indexOf('https'))
-                    }
-                    var extractEverythingAfterUrl = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(clickHandlerStr.lastIndexOf("'"), clickHandlerStr.length)
-                    }
-                    var formatNewHandler = (oldHandlerStr, url) => {
-                        return `${extractEverythingBeforeUrl(oldHandlerStr)}${url}${extractEverythingAfterUrl(oldHandlerStr)}`
-                    }
-                    Array.from(answers).forEach(answer => {
-                        var clickHandlerStr = answer.getAttribute("onclick")
-                        if (extractUrlFromHandler(clickHandlerStr)) {
-                            parsedUrl = addParamsToUrl(extractUrlFromHandler(clickHandlerStr))("&sub5=" + uuid)
-                            answer.setAttribute('onclick', formatNewHandler(clickHandlerStr, parsedUrl))
-                        }
-                    })
-                    Array.from(pageLinks).forEach(link => {
-                        var href = link.href;
-                        if (href) link.href = addParamsToUrl(href)("&sub5=" + uuid);
-                    });
-
-                    function getMetaValue(name) {
-                        const element = document?.head?.querySelector(`meta[name="${name}"]`)
-                        return element?.getAttribute("content")
-                    }
-
-                    function saveToLS(key, value) {
-                        return new Promise((resolve, reject) => {
-                            try {
-                                localStorage.setItem(key, JSON.stringify(value))
-                                const results = JSON.parse(localStorage.getItem(key))
-                                resolve(results)
-                            } catch (error) {
-                                reject(error)
-                            }
-                        })
-                    }
-
-                    saveToLS("fb_sub_five", uuid).then(() => {
-                        window.dispatchEvent(new Event("storage"))
-                        console.log('teststorage')
-                    })
-                });
-            }
-            if (document && document.readyState && document.readyState === "complete") {
-                rewriteDOM()
-            } else {
-                window.addEventListener("DOMContentLoaded", () => {
-                    rewriteDOM()
-                });
-            }
-        } catch (e) {
-            console.log('[params rewriting] ERROR', e)
-        }
-    }())
-</script>
-
-
-<!-- Snippet End -->
+  
 
 
     <link rel="stylesheet" href="./SNGLW-5k_files/604.css" media="all" data-turbo-track="reload" defer="defer">
@@ -201,13 +45,13 @@
   </style>
 <script type="text/javascript" charset="UTF-8" src="./SNGLW-5k_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./SNGLW-5k_files/util.js.download"></script></head>
 
-<body data-lander-page-id="89" data-controller="modal event-tracker" data-modal-hidden-class="!hidden" data-session-location="{&quot;ip&quot;:&quot;37.19.221.227&quot;,&quot;type&quot;:&quot;ipv4&quot;,&quot;continent_code&quot;:&quot;NA&quot;,&quot;continent_name&quot;:&quot;North America&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;country_name&quot;:&quot;United States&quot;,&quot;region_code&quot;:&quot;TX&quot;,&quot;region_name&quot;:&quot;Texas&quot;,&quot;city&quot;:&quot;Houston&quot;,&quot;zip&quot;:&quot;77007&quot;,&quot;latitude&quot;:29.77042007446289,&quot;longitude&quot;:-95.41058349609375,&quot;location&quot;:{&quot;geoname_id&quot;:4699066,&quot;capital&quot;:&quot;Washington D.C.&quot;,&quot;languages&quot;:[{&quot;code&quot;:&quot;en&quot;,&quot;name&quot;:&quot;English&quot;,&quot;native&quot;:&quot;English&quot;}],&quot;country_flag&quot;:&quot;https://assets.ipstack.com/flags/us.svg&quot;,&quot;country_flag_emoji&quot;:&quot;🇺🇸&quot;,&quot;country_flag_emoji_unicode&quot;:&quot;U+1F1FA U+1F1F8&quot;,&quot;calling_code&quot;:&quot;1&quot;,&quot;is_eu&quot;:false},&quot;time_zone&quot;:{&quot;id&quot;:&quot;America/Chicago&quot;,&quot;current_time&quot;:&quot;2023-03-11T09:14:28-06:00&quot;,&quot;gmt_offset&quot;:-21600,&quot;code&quot;:&quot;CST&quot;,&quot;is_daylight_saving&quot;:false},&quot;currency&quot;:{&quot;code&quot;:&quot;USD&quot;,&quot;name&quot;:&quot;US Dollar&quot;,&quot;plural&quot;:&quot;US dollars&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;symbol_native&quot;:&quot;$&quot;},&quot;connection&quot;:{&quot;asn&quot;:212238,&quot;isp&quot;:&quot;Datacamp Limited&quot;}}" data-hidden-referrer="" data-action="click-&gt;event-tracker#handleClick">
+<body>
 
 
 
 
   <div>
-    <div class="page"><div class="container pd-top"><center id="iya6"><h1 id="ifqd"><u>Single Mother:</u>  Without this Financial Aid Program, Me and My Kids Would Be Out on the Streets - Begging For Food. But Instead We Got $50,000 Just 48 Hours After Applying. It’s Amazing!</h1></center><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://plusamericansavings.com/lander_pages/90/?sub5=d33b56f7-eaad-437a-8bbc-17557aec0fa4" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><img src="./SNGLW-5k_files/single_mum_with_kids__1_.jpg" alt="" data-imagelink="" data-src="assets/img/main2.png" id="ihdg"></div><img id="it61st" src="./SNGLW-5k_files/seenon.png"><p id="i714i"><b>(American Money News)
+    <div class="page"><div class="container pd-top"><center id="iya6"><h1 id="ifqd"><u>Single Mother:</u>  Without this Financial Aid Program, Me and My Kids Would Be Out on the Streets - Begging For Food. But Instead We Got $50,000 Just 48 Hours After Applying. It’s Amazing!</h1></center><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://www.andd56trk.com/5W9389/3GF5RC1/" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><img src="./SNGLW-5k_files/single_mum_with_kids__1_.jpg" alt="" data-imagelink="" data-src="assets/img/main2.png" id="ihdg"></div><img id="it61st" src="./SNGLW-5k_files/seenon.png"><p id="i714i"><b>(American Money News)
         </b> - Sarah Wilson was blessed with a miracle on Valentines Day 2023 when she and her 4 kids got a $50,000 direct deposit from this new Financial Aid Program.
       </p><p id="iwkjzc">After taking a pay cut at work because of the recession, Sarah decided she had to figure out a way to get some extra money or else she wouldn’t be able to pay rent next month.
       </p><p id="ibtc9i">There was one catch: she didn’t have the time to get another job because she spent all of her time taking care of her kids after work.
@@ -217,12 +61,12 @@
         <b id="ij9gy">“Honestly, I could have done this with my eyes closed! All I did was fill out a short form - it took me less than 2 minutes. And then 2 days later I checked my banking app on my phone and I had $50,000 in my account! It’s truly a blessing”
         </b></p><h1 id="i40xms">A Special Program Created To Help Americans In Need
       </h1><center id="i3u8h">
-      </center><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://plusamericansavings.com/lander_pages/90/?sub5=d33b56f7-eaad-437a-8bbc-17557aec0fa4" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><img src="./SNGLW-5k_files/Untitled_design__1_.jpg" alt="" data-imagelink="" data-src="assets/img/main2.png" id="ieqqmv"></div><p id="ih4sw">(Sarah Wilson leaves the bank after withdrawing some of the $50,000 from her bank account)
+      </center><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://www.andd56trk.com/5W9389/3GF5RC1/" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><img src="./SNGLW-5k_files/Untitled_design__1_.jpg" alt="" data-imagelink="" data-src="assets/img/main2.png" id="ieqqmv"></div><p id="ih4sw">(Sarah Wilson leaves the bank after withdrawing some of the $50,000 from her bank account)
       </p><p id="i8vqz7">Getting extra money to help catch up on rent and bills can feel like an impossible task, especially during a recession when everybody keeps their pockets shut. Too many people get desperate and do things that they will regret later.
-      </p><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://plusamericansavings.com/lander_pages/90/?sub5=d33b56f7-eaad-437a-8bbc-17557aec0fa4" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><p id="iygg9c">That’s why this 
+      </p><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://www.andd56trk.com/5W9389/3GF5RC1/" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><p id="iygg9c">That’s why this 
           <u><font color="#3498db">New Financial Aid Program
             </font></u> was created. This new program uses something called CUP loans to help struggling Americans catch up on bills, rent, and whatever else they need help with.
-        </p></div><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://plusamericansavings.com/lander_pages/90/?sub5=d33b56f7-eaad-437a-8bbc-17557aec0fa4" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><img src="./SNGLW-5k_files/Reporter_News3__2_.png" alt="" data-imagelink="" data-src="assets/img/main2.png" id="ix0s7f"></div><p id="im4cja">(This new financial aid program has been making the rounds on local news channels)
+        </p></div><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://www.andd56trk.com/5W9389/3GF5RC1/" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><img src="./SNGLW-5k_files/Reporter_News3__2_.png" alt="" data-imagelink="" data-src="assets/img/main2.png" id="ix0s7f"></div><p id="im4cja">(This new financial aid program has been making the rounds on local news channels)
       </p><p id="igh06h">Thanks to the way these programs are structured, the guidelines on how you can spend the money are very flexible - and you can spend the money however you want. It doesn’t have to be rent or catching up on bills, you can buy birthday presents, go on vacations, put a down payment on a new car - it doesn’t matter. You can use this money however you want.
       </p><p id="igf503">Thousands of people have used this new financial aid program to get by during the recession, getting up to $50,000 direct deposited in their bank accounts less than 48 hours after filling out this simple online form.
       </p><h1 id="ipoq31">Just A Few Of Our Happy New Friends!
@@ -240,12 +84,12 @@
       </p><p id="iy4ndn">After reaching out to dozens of people who applied to the program, we are pleased to see that people really are finding success with it (myself included). And you have nothing to lose. To apply for the program and get up to $50,000 in the next 48 hours, click one of the links I have provided and know that you are getting the help you need during these difficult times - no strings attached!
       </p><p id="ico9us"><b><u>EDITORS NOTE:
           </u><span draggable="true">&nbsp;</span></b>Since I wrote this article 2 weeks ago, this program has gone viral on social media and is close to running out of funds in the next 24 hours. Apply NOW before funding runs out and your money goes to somebody else.
-      </p><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://plusamericansavings.com/lander_pages/90/?sub5=d33b56f7-eaad-437a-8bbc-17557aec0fa4" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><button draggable="true" data-controller="button-base" data-action="button-base#click" class="shadow rounded w-full py-4 my-2 text-2lg text-white bg-primary btn-full"><b id="ib8p2m">
+      </p><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://www.andd56trk.com/5W9389/3GF5RC1/" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><button draggable="true" data-controller="button-base" data-action="button-base#click" class="shadow rounded w-full py-4 my-2 text-2lg text-white bg-primary btn-full"><b id="ib8p2m">
           APPLY NOW &gt;&gt;
           </b></button></div><p id="i0t40w">(It costs nothing to check and there is no obligation.)
-        <br></p><center><p><img src="./SNGLW-5k_files/qqq.png" alt="" data-imagelink="" data-src="assets/img/debt.png" id="inmyi"></p></center></div></div><footer class="footer"><div class="container"><div class="menu"><a href="https://plusamericansavings.com/disclosure?sub5=d33b56f7-eaad-437a-8bbc-17557aec0fa4" target="_parent" rel="noopener noreferrer" id="io4fyj">Disclosure</a> | 
-        <a href="https://plusamericansavings.com/terms?sub5=d33b56f7-eaad-437a-8bbc-17557aec0fa4" target="_parent" rel="noopener noreferrer" id="if6t2">Terms &amp; Conditions</a> | 
-        <a href="https://plusamericansavings.com/privacy?sub5=d33b56f7-eaad-437a-8bbc-17557aec0fa4" target="_parent" rel="noopener noreferrer" id="iagkg">Privacy Policy</a></div><p id="i02w1o">The information above has been fact-checked and updated for accuracy.
+        <br></p><center><p><img src="./SNGLW-5k_files/qqq.png" alt="" data-imagelink="" data-src="assets/img/debt.png" id="inmyi"></p></center></div></div><footer class="footer"><div class="container"><div class="menu"> 
+        <a href="terms" target="_parent" rel="noopener noreferrer" id="if6t2">Terms &amp; Conditions</a> | 
+        <a href="privacy" target="_parent" rel="noopener noreferrer" id="iagkg">Privacy Policy</a></div><p id="i02w1o">The information above has been fact-checked and updated for accuracy.
       </p></div><div class="bottom-container no-mg"><p id="imzyil">Certain types of debts are not eligible for enrollment. Some creditors are not eligible for enrollment because they do not negotiate with debt relief companies.
       </p><p id="imgm1s">The company and its affiliates are not lenders, creditors, or debt collectors. This is not a loan. Our representatives have helped thousands of consumers throughout their careers.
       </p></div></footer>
@@ -266,8 +110,224 @@
   </style>
 </div>
 
-<!-- Snippets Start -->
-<!-- Snippet End -->
+ <script type="text/javascript" id="ipl4t" data-controller="snippets--predefined-templates--fbq-uuid-to-sub-five-controller">
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        ' https://connect.facebook.net/en_US/fbevents.js');
+ 
+    (function () {
+        try {
+            var rewriteDOM = function () {
+                Promise.resolve().then(function () {
+                    var uuidGen = function () {
+                        return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+                            (
+                                c ^
+                                (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+                            ).toString(16)
+                        );
+                    };
+                    var uuid = uuidGen();
+                    var options = {
+                        external_id: uuid
+                    }
+                    if (typeof fbq != 'undefined' && fbq) {
+                        fbq('init', '1889425608091859', options);
+                        fbq('track', 'PageView', options);
+                    } else {
+                        console.log('[params rewriting] no fbq pixel source to init');
+                    }
+                    var addParamsToUrl = function (url) {
+                        return params =>
+                            url + (url.indexOf("?") !== -1 ? "&" : "?") + params.substr(1);
+                    };
+ 
+                    var leadFormComponents = document.querySelectorAll("[data-controller=lead-forms--component]");
+                    var pageLinks = document.querySelectorAll("a");
+                    var forms = document.querySelectorAll("form");
+                    var answers = document.querySelectorAll(".button.answer[onclick]")
+                    var redirectableEl = document.querySelectorAll("[data-redirect]");
+                    var newTabRedirectableEl = document.querySelectorAll("[data-new-tab-redirect]");
+		    var nread =  document.querySelectorAll("[data-controller=link-redirect]");
+
+ 
+                    console.log('leadFormComponents', leadFormComponents)
+                    console.log('forms', forms)
+                    window.addEventListener('DOMContentLoaded', (event) => {
+                        console.log('DOM fully loaded and parsed');
+                        console.log("dom ready leadform", document.querySelectorAll("[data-controller=lead-forms--component]"))
+			});
+
+		
+                    Array.from(leadFormComponents).forEach(leadFormComponent => {
+                        var submitRedirectAttr = 'data-lead-forms--component-submit-redirect-url-value'
+                        var popupRedirectAttr = 'data-lead-forms--component-submit-popup-url-value'
+                        var redirectLink = leadFormComponent.getAttribute(submitRedirectAttr)
+                        var popupRedirect = leadFormComponent.getAttribute(popupRedirectAttr)
+                        if (redirectLink) leadFormComponent.setAttribute(submitRedirectAttr, addParamsToUrl(redirectLink)("&sub5=" + uuid));
+                        if (popupRedirect) leadFormComponent.setAttribute(popupRedirectAttr, addParamsToUrl(popupRedirect)("&sub5=" + uuid));
+                    })
+                    Array.from(forms).forEach(form => {
+                        var redirect_link = form.getAttribute('redirect_link')
+                        var new_tab_redirect_link = form.getAttribute('new_tab_redirect_link')
+                        if (redirect_link) form.setAttribute('redirect_link', addParamsToUrl(redirect_link)("&sub5=" + uuid));
+                        if (new_tab_redirect_link) form.setAttribute('new_tab_redirect_link', addParamsToUrl(new_tab_redirect_link)("&sub5=" + uuid));
+                    })
+                    Array.from(redirectableEl).forEach(form => {
+                        var redirect_link = form.getAttribute('data-redirect')
+                        if (redirect_link) form.setAttribute('data-redirect', addParamsToUrl(redirect_link)("&sub5=" + uuid));
+									    })
+                    Array.from(nread).forEach(form => {
+                        var redirect_link = form.getAttribute('data-link-redirect-current-tab-url-value')
+                        if (redirect_link) form.setAttribute('data-link-redirect-current-tab-url-value', addParamsToUrl(redirect_link)("&sub5=" + uuid));
+                    })									    
+                    Array.from(newTabRedirectableEl).forEach(form => {
+                        var new_tab_redirect_link = form.getAttribute('data-new-tab-redirect')
+                        if (new_tab_redirect_link) form.setAttribute('data-new-tab-redirect', addParamsToUrl(new_tab_redirect_link)("&sub5=" + uuid));
+                    })
+                    var extractUrlFromHandler = (clickHandlerStr) => {
+                        return clickHandlerStr.slice(clickHandlerStr.indexOf('https'), clickHandlerStr.lastIndexOf("'"));
+                    }
+                    var extractEverythingBeforeUrl = (clickHandlerStr) => {
+                        return clickHandlerStr.slice(0, clickHandlerStr.indexOf('https'))
+                    }
+                    var extractEverythingAfterUrl = (clickHandlerStr) => {
+                        return clickHandlerStr.slice(clickHandlerStr.lastIndexOf("'"), clickHandlerStr.length)
+                    }
+                    var formatNewHandler = (oldHandlerStr, url) => {
+                        return `${extractEverythingBeforeUrl(oldHandlerStr)}${url}${extractEverythingAfterUrl(oldHandlerStr)}`
+                    }
+                    Array.from(answers).forEach(answer => {
+                        var clickHandlerStr = answer.getAttribute("onclick")
+                        if (extractUrlFromHandler(clickHandlerStr)) {
+                            parsedUrl = addParamsToUrl(extractUrlFromHandler(clickHandlerStr))("&sub5=" + uuid)
+                            answer.setAttribute('onclick', formatNewHandler(clickHandlerStr, parsedUrl))
+                        }
+                    })
+                    Array.from(pageLinks).forEach(link => {
+                        var href = link.href;
+                        if (href) link.href = addParamsToUrl(href)("&sub5=" + uuid);
+                    });
+ 
+                    function getMetaValue(name) {
+                        const element = document?.head?.querySelector(`meta[name="${name}"]`)
+                        return element?.getAttribute("content")
+                    }
+ 
+                    function saveToLS(key, value) {
+                        return new Promise((resolve, reject) => {
+                            try {
+                                localStorage.setItem(key, JSON.stringify(value))
+                                const results = JSON.parse(localStorage.getItem(key))
+                                resolve(results)
+                            } catch (error) {
+                                reject(error)
+                            }
+                        })
+                    }
+ 
+                    saveToLS("fb_sub_five", uuid).then(() => {
+                        window.dispatchEvent(new Event("storage"))
+                        console.log('teststorage')
+                    })
+                });
+            }
+            if (document && document.readyState && document.readyState === "complete") {
+                rewriteDOM()
+            } else {
+                window.addEventListener("DOMContentLoaded", () => {
+                    rewriteDOM()
+                });
+            }
+        } catch (e) {
+            console.log('[params rewriting] ERROR', e)
+        }
+    }())
+</script>
+	
+<script type='text/javascript'>
+    Promise.resolve().then(function() {
+        var addParamsToUrl = function(url) {
+            return params =>
+                url + (url.indexOf("?") !== -1 ? "&" : "?") + params.substr(1);
+        };
+ 
+        var addCurrentParamsToUrl = function (url) {
+          const currentParams = window.location.search
+          return addParamsToUrl(url)(currentParams)
+        }
+ 
+        var leadFormComponents = document.querySelectorAll("[data-controller=lead-forms--component]");
+        var pageLinks = document.querySelectorAll("a");
+        var forms = document.querySelectorAll("form");
+        var answers = document.querySelectorAll(".button.answer[onclick]")
+        var redirectableEl = document.querySelectorAll("[data-redirect]");
+        var newTabRedirectableEl = document.querySelectorAll("[data-new-tab-redirect]");
+ 
+        var setParams = (currentUrl) => addCurrentParamsToUrl(currentUrl);
+        Array.from(pageLinks).forEach(link => {
+            var href = link.href;
+            link.href = setParams(href);
+        });
+        Array.from(leadFormComponents).forEach(leadFormComponent => {
+            var submitRedirectAttr = 'data-lead-forms--component-submit-redirect-url-value'
+            var popupRedirectAttr = 'data-lead-forms--component-submit-popup-url-value'
+            var redirectLink = leadFormComponent.getAttribute(submitRedirectAttr)
+            var popupRedirect = leadFormComponent.getAttribute(popupRedirectAttr)
+            if (redirectLink) leadFormComponent.setAttribute(submitRedirectAttr, setParams(redirectLink));
+            if (popupRedirect) leadFormComponent.setAttribute(popupRedirectAttr, setParams(popupRedirect));
+        })
+        Array.from(forms).forEach(form => {
+            var redirectLink = form.getAttribute('redirect_link')
+            var newTabRedirectLink = form.getAttribute('new_tab_redirect_link')
+            if (redirectLink) form.setAttribute('redirect_link', setParams(redirectLink));
+            if (newTabRedirectLink) form.setAttribute('new_tab_redirect_link', setParams(newTabRedirectLink));
+        })
+        Array.from(redirectableEl).forEach(form => {
+            var redirectLink = form.getAttribute('data-redirect')
+            if (redirectLink) form.setAttribute('data-redirect', setParams(redirectLink));
+        })
+        Array.from(newTabRedirectableEl).forEach(form => {
+            var newTabRedirectLink = form.getAttribute('data-new-tab-redirect')
+            if (newTabRedirectLink) form.setAttribute('data-new-tab-redirect', setParams(newTabRedirectLink));
+        })
+        var extractUrlFromHandler = (clickHandlerStr) => {
+            return clickHandlerStr.slice(clickHandlerStr.indexOf('https'), clickHandlerStr.lastIndexOf("'"));
+        }
+        var extractEverythingBeforeUrl = (clickHandlerStr) => {
+            return clickHandlerStr.slice(0, clickHandlerStr.indexOf('https'))
+        }
+        var extractEverythingAfterUrl = (clickHandlerStr) => {
+            return clickHandlerStr.slice(clickHandlerStr.lastIndexOf("'"), clickHandlerStr.length)
+        }
+        var formatNewHandler = (oldHandlerStr, url) => {
+            return `${extractEverythingBeforeUrl(oldHandlerStr)}${url}${extractEverythingAfterUrl(oldHandlerStr)}`
+        }
+        Array.from(answers).forEach(answer => {
+            var clickHandlerStr = answer.getAttribute("onclick")
+            if (extractUrlFromHandler(clickHandlerStr)) {
+                var parsedUrl = setParams(clickHandlerStr)
+                answer.setAttribute('onclick', formatNewHandler(clickHandlerStr, parsedUrl))
+            }
+        })
+ 
+    });
+</script>
 
 
 
